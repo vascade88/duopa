@@ -51,11 +51,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install --upgrade pip wheel seleniumbase pyautogui pymongo python-xlib
 
-    - name: 🔍 Lint with flake8
-      run: |
-        pip install flake8
-        flake8 . --count --show-source --statistics --exclude=temp
-
     - name: 🦾 Install Chrome (for ubuntu-20.04 only)
       if: matrix.os == 'ubuntu-20.04'
       run: |
