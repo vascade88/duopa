@@ -10,6 +10,12 @@ from dataclasses import dataclass
 from typing import List, Optional
 
 import requests
+geo_data = requests.get("http://ip-api.com/json/").json()
+
+latitude = geo_data["lat"]
+longitude = geo_data["lon"]
+timezone_id = geo_data["timezone"]
+language_code = geo_data["countryCode"].lower()  # e.g., 'us' -> 'en-US'
 
 with SB(uc=True, test=True,locale=f"{language_code.upper()}") as ddddda:
     ddddda.execute_cdp_cmd(
