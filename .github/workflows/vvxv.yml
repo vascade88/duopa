@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ci-${{ github.workflow }}
+  group: ci-1
   cancel-in-progress: true
 
 jobs:
